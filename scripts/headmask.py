@@ -1,0 +1,37 @@
+#!/usr/bin/python
+
+"""
+Creates a simple head masks for a brain MRI scan.
+arg1: the input image
+arg2: the gernerate background mask
+"""
+
+# includes
+import sys
+import numpy
+from scipy.ndimage import binary_fill_holes, binary_opening, binary_closing
+from medpy.io import load, save
+from medpy.filter import largest_connected_component
+
+# constants
+THRESHOLD=50
+FORCE=True
+
+# code
+def main():
+	i, h = load(sys.argv[1])
+
+	o = i <= THRESHOLD
+	o = ~largest_connected_component(o)
+	o = binary_fill_holes(o)
+	
+	mightiness = 5
+	o = numpy.pad(o, mightiness, "edge")
+	o = binary_closing(o, iterations=mightiness)
+	o = binary_opening(o, iterations=mightiness)
+	o = o[mightiness:-mightiness,mightiness:-mightiness,mightiness:-mightiness]
+	
+	save(o, sys.argv[2], h, FORCE)
+
+if __name__ == "__main__":
+	main()

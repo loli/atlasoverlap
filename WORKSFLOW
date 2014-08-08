@@ -1,0 +1,17 @@
+Method
+######
+
+Flair_orig --(elastix_moving)--> TemplateFlair_mni => Trans1
+Flair_orig --(resampling)--> Flair_sub => Trans2 [already existant]
+GT_orig =[T1]=> GT_mni
+Segm_sub =[T2^-1]=> Segm_orig =[T1]=> Segm_mni
+
+Finally evaluate and compare region overlaps between GT_mni and Segm_mni
+
+Things to do
+############
+- Create a head mask [done]
+- Check head masks [done; huge differences in intensity observed!]
+- Register all flairs in the 00originals folder to the flair MNI template (using thresholded images to remove background!).
+- Check the results visually, especially in how far the lesion has been distorted!
+- If to much distortion: use lesion results Segm_orig as mask!
