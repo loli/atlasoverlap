@@ -25,7 +25,7 @@ function register ()
 	fi
 	# register
 	log 1 "Registering ${originals}/${i}/${basesequence}.${imgfiletype}" "[$BASH_SOURCE:$FUNCNAME:$LINENO]"
-	runcond "${scripts}/orig2mni.sh ${originals}/${i}/${basesequence}.${imgfiletype} ${mnispace}/${i}_rigid.${imgfiletype} ${mnispace}/${i}.${imgfiletype} ${mnispace}/${i}_rigid.txt ${mnispace}/${i}_moving.txt ${brainmasks}/${i}.nii.gz" "logs/register${i}.log"
+	runcond "${scripts}/orig2mni.sh ${originals}/${i}/${basesequence}.${imgfiletype} ${mnispace}/${i}_rigid.${imgfiletype} ${mnispace}/${i}.${imgfiletype} ${mnispace}/${i}_rigid.txt ${mnispace}/${i}_moving.txt ${headmasks}/${i}.nii.gz" "logs/register${i}.log"
 }
 
 # main code
