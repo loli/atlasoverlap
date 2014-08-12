@@ -12,6 +12,15 @@ Things to do
 ############
 - Create a head mask [done]
 - Check head masks [done; huge differences in intensity observed!]
-- Register all flairs in the 00originals folder to the flair MNI template (using thresholded images to remove background!).
-- Check the results visually, especially in how far the lesion has been distorted!
-- If to much distortion: use lesion results Segm_orig as mask!
+- Up-Sample the segmentations and brainmasks to original space [done; and noted that medpy_resample.py performs better than IMIImageResample!]
+- Evaluate the resulting segmentations against the original space ground truth using the upssampled brainmasks [done; gives better results than standard appraoch (IMIImageResample)]
+- Register all flairs in the 00originals folder to the flair MNI template (using thresholded images to remove background!). [done]
+- Check the results visually, especially in how far the lesion has been distorted! [done]
+- If to much distortion: use lesion results Segm_orig as mask! [did not happen]
+- Transfom segmentations to MNI space [done; required morphological closing, which could have increased the segmentation size]
+- Transform ground truth to MNI space [done]
+- Evaluate in MNI space [done]
+
+- Compare region-overlaps with different atlases as evaluation!
+=> HOW? TP, FP, etc. over which regions found?
+=> HOW? Percentage of overlap regarding region size?
