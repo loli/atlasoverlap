@@ -1,0 +1,5 @@
+Atlases from MRIcron
+####################
+Atlases seem to be based on a single-subject version of MNI templates.
+They do not fit the SPM8 ICBM MNI brains perfectly, but to some extend.
+Note that the SPM templates have an offset and the MRIcron atlases do not.
