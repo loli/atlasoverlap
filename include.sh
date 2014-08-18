@@ -30,8 +30,8 @@ segmentationsorig="04segmentationsorig/${gtset}/"
 segmentationsmni="05segmentationsmni/${gtset}/"
 
 groundtruthorig="100gtsegmentationsorig/${evalgtset}"
-groundtruthmni="101gtsegmentationsmni/"
-brainmasks="102brainmasks/" # !TODO: Rename to headmasks
+groundtruthmni="101gtsegmentationsmni/${evalgtset}"
+headmasks="102headmasks/"
 origspacereferences="103origspacereferences/"
 brainmaskssub="104brainmaskssub/"
 brainmasksorig="105brainmasksorig/"
