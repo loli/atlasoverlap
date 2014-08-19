@@ -1,0 +1,8 @@
+CONCLUSION (of this first experiment)
+##########
+
+The masks are good and a considerably high TPR can be achieved (~0.8). But the normalization is horrible in some cases and takes a huge amount of time.
+
+I think, I'll have to find a less strongly deforming registration, maybe largely rigid. And the deforming part should take the lesion mask into account!
+
+For example cases, see 28 & 30, both in which the deformation is such, that the mask does not fit the lesion area at all in MNI space.

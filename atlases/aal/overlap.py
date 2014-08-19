@@ -15,5 +15,18 @@ def overlap(img):
     img = img[:-1,:-1,:-1]
     # get intersection with atlas areas and return
     area_ids = atl[img]
-    return itemfreq(area_ids)
-
+    # return all except zero-background-area
+    return itemfreq(area_ids[area_ids != 0])
+    
+def size():
+    """
+    Return the atlas size.
+    """
+    atl, _ = load(ATLAS_FILE)
+    return numpy.count_nonzero(atl != 0)
+    
+def regions():
+    """Return all region ids.
+    """
+    atl, _ = load(ATLAS_FILE)
+    return numpy.unique(atl[atl != 0])

@@ -7,9 +7,9 @@
 # arg5: where to save the resulting non-rigid transformation file
 # arg6: head (not brain!) mask for moving image
 
-TEMPLATE="/data_humbug1/maier/Temp_Pipeline/AtlasOverlap/templates/flair.nii.gz"
-CNF_FILE_RIG="/data_humbug1/maier/Temp_Pipeline/AtlasOverlap/configs/orig2mni_rig.txt"
-CNF_FILE_MOV="/data_humbug1/maier/Temp_Pipeline/AtlasOverlap/configs/orig2mni_mov.txt"
+TEMPLATE="/share/data_humbug1/maier/Temp_Pipeline/AtlasOverlap/templates/flair.nii.gz"
+CNF_FILE_RIG="/share/data_humbug1/maier/Temp_Pipeline/AtlasOverlap/configs/orig2mni_rig.txt"
+CNF_FILE_MOV="/share/data_humbug1/maier/Temp_Pipeline/AtlasOverlap/configs/orig2mni_mov.txt"
 
 echo "ELASTIX:MOVING Registration"
 

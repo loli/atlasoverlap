@@ -20,7 +20,4 @@ Things to do
 - Transfom segmentations to MNI space [done; required morphological closing, which could have increased the segmentation size]
 - Transform ground truth to MNI space [done]
 - Evaluate in MNI space [done]
-
-- Compare region-overlaps with different atlases as evaluation!
-=> HOW? TP, FP, etc. over which regions found?
-=> HOW? Percentage of overlap regarding region size?
+- Compare region-overlaps with different atlases as evaluation! [done]

@@ -16,9 +16,10 @@ def overlap(img):
     indices_mni = numpy.asarray(img.nonzero()).T
     indices_tal = icbm_spm2tal(indices_mni)
     indices_tal = __round_indices(indices_tal, atl)
-    # get intersection with atlas areas and return
+    # get intersection with atlas areas
     area_ids = atl[tuple(indices_tal.T)]
-    return itemfreq(area_ids)
+    # return all except zero-background-area
+    return itemfreq(area_ids[area_ids != 0])
     
 def __round_indices(indices, trg_img):
     indices = numpy.around(indices)
@@ -29,3 +30,15 @@ def __round_indices(indices, trg_img):
         indices[:,dim][mask_lower] = 0
     return indices.astype(numpy.uint)
     
+def size():
+    """
+    Return the atlas size.
+    """
+    atl, _ = load(ATLAS_FILE)
+    return numpy.count_nonzero(atl != 0)
+    
+def regions():
+    """Return all region ids.
+    """
+    atl, _ = load(ATLAS_FILE)
+    return numpy.unique(atl[atl != 0])    
